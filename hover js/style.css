@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.contenedor {
+  background-color: rgb(40, 39, 57);
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.contenedor p {
+  color: white;
+  font-size: xx-large;
+  padding: 15%;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.contenedor button {
+  font-size: xx-large;
+  padding: 1px;
+  border: none;
+  border-radius: 5px;
+  width: 10%;
+  margin: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(100, 100, 100);
+  box-shadow: rgba(0, 0, 0, 0.21) 5px 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease; 
+}
+
+
+#yesBtn{
+    transform: translate(-100%,0);
+}
+
+#noBtn{
+    position: absolute;
+}
