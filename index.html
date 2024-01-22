@@ -5,8 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Declaracion</title>
     <link rel="stylesheet" href="style.css">
+     <style>
+    #audio-controls {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #play-pause-btn {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
+
+    <audio id="background-music" loop>
+  <source src="tu-musica.mp3" type="audio/mp3">
+  Tu navegador no soporta el elemento de audio.
+</audio>
+
+<div id="audio-controls">
+  <svg id="play-icon" width="30" height="30" viewBox="0 0 24 24" fill="#000000">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path id="play-path" d="M8 5v14l11-7z"/>
+  </svg>
+
+  <svg id="pause-icon" width="30" height="30" viewBox="0 0 24 24" fill="#000000" style="display: none;">
+    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+  </svg>
+</div>
+
+<script>
+  const audio = document.getElementById('background-music');
+  const playIcon = document.getElementById('play-icon');
+  const pauseIcon = document.getElementById('pause-icon');
+  const playPath = document.getElementById('play-path');
+
+  playIcon.addEventListener('click', () => {
+    audio.play();
+    playPath.style.display = 'none';
+    pauseIcon.style.display = 'inline';
+  });
+
+  pauseIcon.addEventListener('click', () => {
+    audio.pause();
+    playPath.style.display = 'inline';
+    pauseIcon.style.display = 'none';
+  });
+</script>
+
     
     <div class="contenedor">
         <p>Quieres ser mi novia?</p>
