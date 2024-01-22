@@ -46,18 +46,28 @@
   const pauseIcon = document.getElementById('pause-icon');
   const playPath = document.getElementById('play-path');
 
-  playIcon.addEventListener('click', () => {
+  // Función para reproducir la música y cambiar los iconos
+  function playMusic() {
     audio.play();
     playPath.style.display = 'none';
     pauseIcon.style.display = 'inline';
-  });
+  }
 
-  pauseIcon.addEventListener('click', () => {
+  // Función para pausar la música y cambiar los iconos
+  function pauseMusic() {
     audio.pause();
     playPath.style.display = 'inline';
     pauseIcon.style.display = 'none';
-  });
+  }
+
+  // Evento load para iniciar la reproducción al cargar la página
+  window.addEventListener('load', playMusic);
+
+  // Eventos click para alternar entre reproducción y pausa
+  playIcon.addEventListener('click', playMusic);
+  pauseIcon.addEventListener('click', pauseMusic);
 </script>
+
 
     
     <div class="contenedor">
